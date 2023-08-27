@@ -8,9 +8,15 @@ const accountService = require('./account.service');
 
 // routes
 router.post('/authenticate', authenticateSchema, authenticate);
+
 router.post('/register', registerSchema, register);
+router.post('/register-gh-pages', registerSchema, registerGHPages);
+
 router.post('/verify-email', verifyEmailSchema, verifyEmail);
+
 router.post('/forgot-password', forgotPasswordSchema, forgotPassword);
+router.post('/forgot-password-gh-pages', forgotPasswordSchema, forgotPasswordGHPages);
+
 router.post('/validate-reset-token', validateResetTokenSchema, validateResetToken);
 router.post('/reset-password', resetPasswordSchema, resetPassword);
 router.get('/', authorize(Role.Admin), getAll);
@@ -60,6 +66,13 @@ function register(req, res, next) {
         .catch(next);
 }
 
+
+function registerGHPages(req, res, next) {
+    accountService.register(req.body, ( req.get('origin') + '/gh-pages-react-node-orm-test/#'))
+        .then(() => res.json({ message: 'Registration successful, please check your email for verification instructions' }))
+        .catch(next);
+}
+
 function verifyEmailSchema(req, res, next) {
     const schema = Joi.object({
         token: Joi.string().required()
@@ -82,6 +95,13 @@ function forgotPasswordSchema(req, res, next) {
 
 function forgotPassword(req, res, next) {
     accountService.forgotPassword(req.body, req.get('origin'))
+        .then(() => res.json({ message: 'Please check your email for password reset instructions' }))
+        .catch(next);
+}
+
+
+function forgotPasswordGHPages(req, res, next) {
+    accountService.forgotPassword(req.body, (req.get('origin') + '/gh-pages-react-node-orm-test/#'))
         .then(() => res.json({ message: 'Please check your email for password reset instructions' }))
         .catch(next);
 }
