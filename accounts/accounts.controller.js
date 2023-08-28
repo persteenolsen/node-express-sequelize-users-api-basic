@@ -68,7 +68,7 @@ function register(req, res, next) {
 
 
 function registerGHPages(req, res, next) {
-    accountService.register(req.body, ( req.get('origin') + '/gh-pages-react-node-orm-test/#'))
+    accountService.register(req.body, ( req.get('origin') + '/gh-pages-react-node-orm-client/#'))
         .then(() => res.json({ message: 'Registration successful, please check your email for verification instructions' }))
         .catch(next);
 }
@@ -101,7 +101,7 @@ function forgotPassword(req, res, next) {
 
 
 function forgotPasswordGHPages(req, res, next) {
-    accountService.forgotPassword(req.body, (req.get('origin') + '/gh-pages-react-node-orm-test/#'))
+    accountService.forgotPassword(req.body, (req.get('origin') + '/gh-pages-react-node-orm-client/#'))
         .then(() => res.json({ message: 'Please check your email for password reset instructions' }))
         .catch(next);
 }
