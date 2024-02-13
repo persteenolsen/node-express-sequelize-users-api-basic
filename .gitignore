@@ -2,8 +2,6 @@
 # Hide the info for database connection
 config.json
 
-swagger.yaml
-
 publish.js
 
 license
