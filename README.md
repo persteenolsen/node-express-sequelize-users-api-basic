@@ -4,7 +4,7 @@ Node Express Sequelize MySQL API with Email Sign Up, Verification, Authenticatio
 
 # Last updated
 
-12-05-2024
+01-12-2024
 
 # Functionality of the Web App
 
@@ -16,7 +16,7 @@ Node Express Sequelize MySQL API with Email Sign Up, Verification, Authenticatio
 
 # Tech used for building the Web App
 
-- Node.js
+- Node version 20.18.1
 - Sequelize used to implement the ORM at the Web API
 - The Node.js Web API is hosted at Azure App Service with the Free App Service Plan
 - The React Client is hosted at a traditional Webhotel
