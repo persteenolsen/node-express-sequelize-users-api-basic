@@ -49,6 +49,15 @@ Node Express Sequelize MySQL API with Email Sign Up, Verification, Authenticatio
 
 Files adapted at this Web API for receiving requests from the React client at GH Pages:
 
-- accounts/accounts.controller.js 
+- accounts/accounts.controller.js
+
+# Updating Node version by Azure Portal
+
+- Go to App Service and select your App
+- Then Settings - Enviroment Variables - WEBSITE_NODE_DEFAULT_VERSION
+- Type the Version you want like: ~20 
+- You have selected the most recent Node Version 20.x
+- Click - Save - Confirm
+- Thats it :-)
 
 
