@@ -27,7 +27,7 @@ app.use('/api-docs', require('_helpers/swagger'));
 // Get a wakeup ping from the Client and response with a pong => "Hello World - ..." in the "message" property !
 app.get('/hello', function (req, res) {
    	
-	 res.status(200).send( { message: 'Hello World => Last updated: 10-01-2025 ...'} );
+	 res.status(200).send( { message: 'Hello World => Last updated: 06-01-2026 ...'} );
 	 console.log('NODE SERVER => Responding with a pong ...');
 	 
  });
